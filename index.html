@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Center the form */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style form inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Style labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Style submit button */
+        input[type="submit"] {
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        h2 {
+            color: rgb(31, 111, 31);
+            text-align: center;
+        }
+
+        h3 {
+            color: orangered;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>St. Lawrence High School Chuhari, West Champaran</h2>
+        <h3>Please Fill The Form 2018 Batch</h3>
+        <form action="/getdata" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="username" placeholder="Enter username*" id="name">
+            <br>
+            <label for="pass">Email:</label>
+            <input type="email" name="email" placeholder="Enter Email Id*" id="pass">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Password*" id="password">
+            <br>
+            <label for="DATE">Date of Birth:</label>
+            <input type="date" name="date">
+            <br>
+            <label for="adhar">Adhar No*:</label>
+            <input type="text" name="adhar" placeholder="Enter your Adhar*">
+            <br>
+            <label for="phone">Mob.No:</label>
+            <input type="text" name="phone" placeholder="Please Enter your phone number*">
+            <br>
+            <label for="image">Upload Image:</label>
+            <input type="file" name="filename">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <p><a href="#">Forgot Your password</a></p>
+    </div>
+     <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("name").value;
+            document.getElementById("welcomeMsg").innerText = "Welcome, " + username + "!";
+            document.getElementById("welcomeMsg").style.display = "block";
+        });
+    </script>
+</body>
+</html>
