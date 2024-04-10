@@ -89,7 +89,7 @@
     <div class="container">
         <h2>St. Lawrence High School Chuhari, West Champaran</h2>
         <h3>Please Fill The Form 2018 Batch</h3>
-        <form action="/getdata" method="post">
+        <form id="myForm" action="display.html" method="post">
             <label for="name">Name:</label>
             <input type="text" name="username" placeholder="Enter username*" id="name">
             <br>
@@ -122,7 +122,17 @@
             <input type="submit" value="Submit">
         </form>
         <br>
+        <p id="welcomeMsg" style="display: none;"></p>
         <p><a href="#">Forgot Your password</a></p>
     </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("name").value;
+            // Redirect to display.html with username as a parameter
+            window.location.href = "display.html?username=" + encodeURIComponent(username);
+        });
+    </script>
 </body>
 </html>
